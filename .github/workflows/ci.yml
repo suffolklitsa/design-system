@@ -1,0 +1,19 @@
+name: checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generated files are current
+        run: python3 scripts/build_tokens.py --check
+      - name: Tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Python package installs
+        run: pip install . && python3 -c "from litsa_design import tokens; print(tokens.INK)"
