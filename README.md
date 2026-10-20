@@ -56,6 +56,10 @@ More, including fonts and what each color is for: [docs/USAGE.md](docs/USAGE.md)
 
 Renaming or removing a token breaks projects that use it. Add the new name first, move projects over, then remove the old one in a later version.
 
+## Branches
+
+Pull requests go to `staging`, the default branch. `main` is the released version: maintainers promote `staging` to `main` with a pull request when a batch of changes is ready. Both branches are protected and need a review and passing checks.
+
 ## Contributing
 
 Pick an issue labeled [`good first issue`](https://github.com/suffolklitsa/design-system/labels/good%20first%20issue) or [`no code needed`](https://github.com/suffolklitsa/design-system/labels/no%20code%20needed), and comment to claim it. Read [CONTRIBUTING.md](CONTRIBUTING.md) first. Open a Codespace from the green **Code** button to work without installing anything.

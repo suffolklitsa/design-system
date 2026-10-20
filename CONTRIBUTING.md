@@ -21,4 +21,4 @@ Open `gallery/index.html` through a local server to see your change: `python3 -m
 
 ## Releasing (maintainers)
 
-After merging, tag `main` (`git tag v0.1.1 && git push --tags`) and note the change in [docs/CHANGELOG.md](docs/CHANGELOG.md). jsDelivr serves the tag within minutes.
+After a batch is promoted from `staging` to `main`, tag `main` (`git tag v0.1.1 && git push --tags`) and note the change in [docs/CHANGELOG.md](docs/CHANGELOG.md). jsDelivr serves the tag within minutes.
