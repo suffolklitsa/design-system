@@ -26,11 +26,11 @@ The source of truth is `tokens/tokens.json`; this table is a reading aid.
 
 ## Fonts
 
-Until the fonts move into this repo, projects served from suffolklitsa.org load them from the site:
+Until the fonts move into this repo, projects served from suffolklitsa.org load them from the site's `/font/` folder:
 
 ```css
-@font-face { font-family: "LITSA Display"; src: url("/static/font/LITSADisplay.woff2") format("woff2"); font-display: swap; }
-@font-face { font-family: "Literata"; src: url("/static/font/literata-roman.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "LITSA Display"; src: url("/font/LITSADisplay.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Literata"; src: url("/font/literata-roman.woff2") format("woff2"); font-display: swap; }
 ```
 
 Projects elsewhere fall back to the next font in each stack.
