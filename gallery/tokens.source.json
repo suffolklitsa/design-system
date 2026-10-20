@@ -1,0 +1,43 @@
+{
+  "$schema_version": 1,
+  "$source": "Taken from suffolklitsa.org static/litsa.css on 2026-10-20. That file still holds its own copy until the site switches to dist/tokens.css.",
+  "color": {
+    "ink": {"value": "#18212F", "use": "Main text, headings"},
+    "ink-2": {"value": "#3A4657", "use": "Secondary text"},
+    "ink-3": {"value": "#657282", "use": "Captions, metadata, placeholder text"},
+    "line": {"value": "#D5DBE3", "use": "Borders, dividers"},
+    "line-soft": {"value": "#E6EAEF", "use": "Subtle dividers inside cards"},
+    "paper": {"value": "#F7F8FA", "use": "Page background"},
+    "paper-2": {"value": "#FFFFFF", "use": "Cards, panels, inputs"},
+    "blue": {"value": "#1769E0", "use": "Primary actions, links on dark"},
+    "blue-deep": {"value": "#0F4FAB", "use": "Links and text-colored accents on light backgrounds"},
+    "gold": {"value": "#E5AD2D", "use": "Torch accent, focus outlines; never body text"}
+  },
+  "font": {
+    "display": {"value": "\"LITSA Display\",\"Helvetica Neue\",Arial,sans-serif", "use": "Headings, labels, the wordmark"},
+    "body": {"value": "\"Literata\",Georgia,\"Times New Roman\",serif", "use": "Running text"}
+  },
+  "size": {
+    "t-xs": {"value": "12px", "use": "Uppercase labels"},
+    "t-sm": {"value": "14px", "use": "Captions, metadata"},
+    "t-base": {"value": "16px", "use": "Interface text"},
+    "t-md": {"value": "18px", "use": "Body text on the site"},
+    "t-lg": {"value": "21px", "use": "Lead paragraphs, small headings"},
+    "t-xl": {"value": "26px", "use": "Section headings"},
+    "t-2xl": {"value": "33px", "use": "Page headings"},
+    "t-3xl": {"value": "44px", "use": "Large headings"},
+    "t-4xl": {"value": "60px", "use": "Hero headings"},
+    "t-5xl": {"value": "82px", "use": "Largest display"}
+  },
+  "space": {
+    "s1": {"value": "4px"}, "s2": {"value": "8px"}, "s3": {"value": "12px"}, "s4": {"value": "16px"},
+    "s5": {"value": "24px"}, "s6": {"value": "32px"}, "s7": {"value": "48px"}, "s8": {"value": "64px"},
+    "s9": {"value": "96px"}, "s10": {"value": "128px"}, "s11": {"value": "192px"}
+  },
+  "layout": {
+    "wrap": {"value": "1180px", "use": "Maximum page width"},
+    "rail": {"value": "172px", "use": "Left rail width on article pages"},
+    "gap": {"value": "56px", "use": "Gap between rail and content"},
+    "measure": {"value": "58ch", "use": "Maximum line length for running text"}
+  }
+}

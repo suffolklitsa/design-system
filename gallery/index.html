@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LITSA Design System</title>
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    @font-face { font-family: "LITSA Display"; src: url("/static/font/LITSADisplay.woff2") format("woff2"); font-display: swap; }
+    @font-face { font-family: "Literata"; src: url("/static/font/literata-roman.woff2") format("woff2"); font-display: swap; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: var(--t-base); line-height: 1.55; }
+    main { max-width: var(--wrap); margin: 0 auto; padding: var(--s7) 16px; display: grid; gap: var(--s8); }
+    h1, h2 { font-family: var(--display); font-weight: 400; margin: 0 0 var(--s4); }
+    h1 { font-size: var(--t-3xl); }
+    h2 { font-size: var(--t-xl); }
+    .lead { color: var(--ink-2); max-width: var(--measure); font-size: var(--t-md); }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); gap: var(--s4); }
+    .swatch { background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    .chip { height: 72px; border-bottom: 1px solid var(--line-soft); }
+    .swatch p { margin: 0; padding: var(--s2) var(--s3); font-size: var(--t-sm); }
+    .swatch code { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+    .scale { display: grid; gap: var(--s3); }
+    .row { display: grid; grid-template-columns: 6rem 1fr; gap: var(--s4); align-items: baseline; border-top: 1px solid var(--line-soft); padding-top: var(--s3); }
+    .row code { color: var(--ink-3); font-size: var(--t-sm); }
+    .bar { height: 12px; background: var(--blue); border-radius: 2px; }
+    footer { color: var(--ink-3); font-size: var(--t-sm); }
+    a { color: var(--blue-deep); }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>LITSA Design System</h1>
+    <p class="lead">The colors, type and spacing every LITSA project uses. Everything on this page is drawn from <code>tokens.json</code>, so it is always current.</p>
+  </header>
+  <section><h2>Color</h2><div class="swatches" id="color"></div></section>
+  <section><h2>Type sizes</h2><div class="scale" id="size"></div></section>
+  <section><h2>Spacing</h2><div class="scale" id="space"></div></section>
+  <footer>Source: <a href="https://github.com/suffolklitsa/design-system">suffolklitsa/design-system</a>. Components come next; see the repo's roadmap.</footer>
+</main>
+<script type="module">
+  const res = await fetch("tokens.source.json");
+  const t = await res.json();
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  document.getElementById("color").innerHTML = Object.entries(t.color).map(([n, s]) =>
+    `<div class="swatch"><div class="chip" style="background:var(--${n})"></div><p><strong>${n}</strong><br><code>${esc(s.value)}</code><br>${esc(s.use || "")}</p></div>`).join("");
+  document.getElementById("size").innerHTML = Object.entries(t.size).map(([n, s]) =>
+    `<div class="row"><code>${n} · ${esc(s.value)}</code><span style="font-size:var(--${n});line-height:1.2">Legal innovation, made usable</span></div>`).join("");
+  document.getElementById("space").innerHTML = Object.entries(t.space).map(([n, s]) =>
+    `<div class="row"><code>${n} · ${esc(s.value)}</code><div class="bar" style="width:var(--${n})"></div></div>`).join("");
+</script>
+</body>
+</html>
