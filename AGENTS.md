@@ -17,6 +17,7 @@ python3 -m http.server 8000 -d gallery    # see the gallery
 
 ## Rules for this repo
 
+- **Branches:** work from `staging` and open pull requests against it. Never target `main`; maintainers promote `staging` to `main`.
 - **Edit `tokens/tokens.json`, then rebuild.** Never edit generated files.
 - **Every token has a `use` note.** Text colors must meet WCAG AA contrast on the backgrounds they're used on; say what you checked.
 - **No breaking renames.** Add a new token, migrate projects, remove the old one later.
